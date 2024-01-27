@@ -2,7 +2,9 @@
 
 ## Project setup
 ```
-npm install
+npm install vuex
+npm install vue-router
+npm install firebase
 ```
 
 ### Compiles and hot-reloads for development
