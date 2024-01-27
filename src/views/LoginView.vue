@@ -33,7 +33,6 @@ export default {
     const store = useStore();
 
     const login = async () => {
-      // Prosta walidacja - sprawdź, czy pola są wypełnione
       if (!loginData.value.email || !loginData.value.password) {
         console.error("Wypełnij wszystkie pola.");
         return;
@@ -41,19 +40,15 @@ export default {
 
       try {
         await store.dispatch('login', loginData.value);
-        // Po zalogowaniu możesz przekierować użytkownika lub wykonać inne operacje
       } catch (error) {
         console.error('Błąd logowania:', error.message);
-        // Obsłuż błąd logowania
       }
 
-      // Opcjonalnie, możesz wyczyścić dane po zalogowaniu
       loginData.value = {
         email: '',
         password: ''
       };
 
-      // Przekieruj użytkownika
       router.push("/app");
     };
 

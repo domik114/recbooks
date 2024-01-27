@@ -26,19 +26,23 @@ const store = createStore({
       commit("setUser", null);
       localStorage.removeItem("user");
     },
+
     state: {
       user: null,
     },
+
     getters: {
       getUser: (state) => state.user,
       isAuthenticated: (state) => state.user !== null,
     },
+    
     mutations: {
       setUser: (state, user) => {
         state.user = user;
         localStorage.setItem("user", JSON.stringify(user));
       },
     },
+
     actions: {
       createUser: async ({ commit }, { email, password }) => {
         const userCredential = await createUserWithEmailAndPassword(

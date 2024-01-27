@@ -18,7 +18,6 @@
         <input v-model="userData.password2" type="password" class="form-control" id="password2" required>
       </div>
 
-      <!-- Dodaj komunikat o błędzie dla niezgodnych haseł -->
       <div v-if="passwordsDoNotMatch" class="alert alert-danger" role="alert">
         Hasła nie są zgodne.
       </div>
@@ -50,13 +49,11 @@ export default {
     const passwordsDoNotMatch = computed(() => userData.value.password !== userData.value.password2);
 
     const register = async () => {
-      // Sprawdź, czy hasła się zgadzają
       if (passwordsDoNotMatch.value) {
         console.error("Hasła nie są zgodne.");
         return;
       }
 
-      // Tutaj możesz przesłać dane na serwer lub wykonać inne działania związane z rejestracją
       console.log('Dane do rejestracji:', userData.value);
 
       try {
@@ -65,7 +62,6 @@ export default {
         console.error("Błąd podczas rejestracji:", error.message);
       }
 
-      // Opcjonalnie, możesz wyczyścić dane po zarejestrowaniu
       userData.value = {
         email: '',
         password: '',

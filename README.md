@@ -15,9 +15,10 @@ npm run serve
 npm run build
 ```
 
-### Lints and fixes files
+### Po zrobiuniu run build
 ```
-npm run lint
+install -g serve
+serve -s dist
 ```
 
 ### Customize configuration
