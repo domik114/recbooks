@@ -1,0 +1,5 @@
+github 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
+
+git remote add origin https://domik114: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@github.com/domik114/recbooks.git
+git branch -M main
+git push -u origin main
